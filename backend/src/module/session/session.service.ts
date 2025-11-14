@@ -1,10 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { CreateSessionDto } from './dto/session.dto';
+import { EmailService } from './email.service';
 
 @Injectable()
 export class SessionService {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly emailService: EmailService,
+  ) {}
 
   async createSession(dto: CreateSessionDto) {
     if (!dto.userId) return null;
@@ -39,6 +43,7 @@ export class SessionService {
 
     if (typeof (session as any).save === 'function') {
       await (session as any).save();
+      await this.emailService.sendEmail(user.guardianEmail);
     }
 
     return session;

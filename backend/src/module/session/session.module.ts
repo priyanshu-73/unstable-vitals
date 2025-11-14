@@ -4,6 +4,7 @@ import { SessionSchema } from './schema/session.schema';
 import { SessionService } from './session.service';
 import { UserModule } from '../user/user.module';
 import { SessionController } from './session.controller';
+import { EmailService } from './email.service';
 
 @Module({
   imports: [
@@ -11,7 +12,7 @@ import { SessionController } from './session.controller';
     UserModule,
   ],
   controllers: [SessionController],
-  providers: [SessionService],
+  providers: [SessionService, EmailService],
   exports: [SessionService],
 })
 export class SessionModule {}
