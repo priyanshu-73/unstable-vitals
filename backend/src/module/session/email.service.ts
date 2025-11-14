@@ -5,9 +5,7 @@ import * as nodemailer from 'nodemailer';
 export class EmailService {
   private transporter: nodemailer.Transporter;
 
-  constructor(
-    private configService: ConfigService,
-  ) {
+  constructor(private configService: ConfigService) {
     // Validate email configuration
     const emailUser = this.configService.get<string>('EMAIL_USER');
     const emailPass = this.configService.get<string>('EMAIL_PASSWORD');
@@ -34,56 +32,71 @@ export class EmailService {
    *
    * @param to email address of the receiver
    */
-  async sendEmail(to: string): Promise<void> {
+  async sendEmail(
+    to: string,
+    sessionName: string,
+    userName: string,
+  ): Promise<void> {
     const mailOptions = {
       from:
         this.configService.get<string>('EMAIL_FROM') ||
-        'Unstable Vitals <noreply@healthjini.com>',
-      to,
-      subject: "Account Verification Code",
-      html: `      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>Verification Code</title>
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 20px;
-          }
-          .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
-          }
-          .footer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #7f8c8d;
-            text-align: center;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <p>Dear User,</p>
-          <p>Your verification code is:</p>
-          <p>Please enter this code to complete your verification process.</p>
-          <p>For your security, do not share this code with anyone. It will expire in the next <strong>10 minutes</strong>.</p>
-          <p>If you did not request this code, please ignore this email.</p>
-          <p>Best regards,<br><strong>NuvoGPT Team</strong></p>
-          <div class="footer">
-            <p>This is an automated message. Please do not reply.</p>
-          </div>
-        </div>
-      </body>
-      </html>
-    `,
+        'Exercise Monitor <noreply@medtech-hackathon.com>',
+      to, // guardian's email address
+      subject: `🚨 Emergency Alert: Possible Incident Detected`,
+      html: `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Emergency Alert</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(255,0,0,0.15);
+        max-width: 480px;
+        margin: auto;
+      }
+      .alert {
+        color: #c0392b;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #7f8c8d;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="alert">🚨 Attention Required: Possible Emergency!</p>
+      <p>Dear Guardian,</p>
+      <p>
+        We detected a critical situation during <strong>${userName}'s</strong> exercise session.<br>
+        <strong>Session Name:</strong> ${sessionName}
+      </p>
+      <p>
+        Please check in immediately to ensure their safety.<br>
+        This automated alert was triggered due to abnormal inactivity or fall detection.
+      </p>
+      <p>Best regards,<br><strong>Unstable Vitals Team</strong></p>
+      <div class="footer">
+        <p>This is an automated message. Please do not reply.</p>
+      </div>
+    </div>
+  </body>
+  </html>
+  `,
     };
+
     try {
       await this.transporter.sendMail(mailOptions);
     } catch (error) {

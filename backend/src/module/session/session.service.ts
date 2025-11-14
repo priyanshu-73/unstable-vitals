@@ -43,7 +43,11 @@ export class SessionService {
 
     if (typeof (session as any).save === 'function') {
       await (session as any).save();
-      await this.emailService.sendEmail(user.guardianEmail);
+      await this.emailService.sendEmail(
+        user.guardianEmail,
+        session?.['exerciseName'] ?? '',
+        user.name,
+      );
     }
 
     return session;
