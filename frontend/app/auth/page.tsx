@@ -54,29 +54,29 @@ export default function AuthPage() {
   };
 
   return (
-           <div
-        className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat"
+    <div
+      className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `
+    linear-gradient(to bottom right, #241c41, rgba(244,246,255,0.85), #241c41),
 
-  style={{
-    backgroundImage: `
-    linear-gradient(to bottom right, rgba(238, 243, 255, 0.42), rgba(244,246,255,0.85), rgba(1, 7, 20, 0.85)),
 
             url('/ac.jpg')
 
     `,
-    backgroundAttachment: "fixed",
-  }}
->
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div className="w-full min-h-screen flex items-center justify-center   p-6">
         <div className="w-full max-w-[30rem]   backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-10 relative overflow-hidden">
           {/* LOGO */}
           <div className="flex flex-col items-center mb-8">
             <div className="bg-blue-600/10 p-4 rounded-full">
-              <Dumbbell className="h-10 w-10 text-blue-600" />
+              <Dumbbell className="h-10 w-10 text-[#26143e]" />
             </div>
 
-            <h1 className="mt-4 text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">
-              Unstable Vitals FitTrack
+            <h1 className="mt-4 text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-[#26143e]">
+              Unstable Vitals
             </h1>
 
             <p className="text-gray-600 mt-2">
@@ -91,7 +91,7 @@ export default function AuthPage() {
             <button
               className={`flex-1 py-2 rounded-xl font-semibold transition ${
                 mode === "login"
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow"
+                  ? "bg-[#26143e] text-white shadow"
                   : "text-gray-700"
               }`}
               onClick={() => setMode("login")}
@@ -102,7 +102,7 @@ export default function AuthPage() {
             <button
               className={`flex-1 py-2 rounded-xl font-semibold transition ${
                 mode === "signup"
-                  ? "bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow"
+                  ? "bg-[#26143e] text-white shadow"
                   : "text-gray-700"
               }`}
               onClick={() => setMode("signup")}
@@ -168,7 +168,7 @@ export default function AuthPage() {
           {/* BUTTON */}
           <button
             onClick={handleSubmit}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition"
+            className="w-full bg-[#26143e] text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition"
           >
             {mode === "login" ? "Login" : "Create Account"}
           </button>
