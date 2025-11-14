@@ -8,6 +8,7 @@ import {
   DrawingUtils
 } from "@mediapipe/tasks-vision";
 import toast, { Toaster } from 'react-hot-toast';
+import { useSearchParams } from "next/navigation";
 
 interface Exercise {
   name: string;
@@ -31,7 +32,15 @@ export default function ExerciseTracker() {
   const [emotionStatus, setEmotionStatus] = useState('😊 Normal');
   const [accidentWarning, setAccidentWarning] = useState<string | null>(null);
   const [accidentCountdown, setAccidentCountdown] = useState(0);
- 
+ const searchParams = useSearchParams();
+const exerciseParam = searchParams.get("exercise");
+
+
+useEffect(() => {
+  if (exerciseParam) {
+    setCurrentExercise(exerciseParam);
+  }
+}, [exerciseParam]);
   // Exercise tracking refs
   const exerciseStartTimeRef = useRef(0);
   const lastAlertTimeRef = useRef(0);
@@ -1020,7 +1029,7 @@ export default function ExerciseTracker() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
       <Toaster
-        position="top-center"
+        position="top-right"
         reverseOrder={false}
         toastOptions={{
           style: { padding: '16px', fontSize: '15px' }
@@ -1138,7 +1147,7 @@ export default function ExerciseTracker() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 shadow-2xl">
+            <div className="bg-gradient-to-br from-purple-500 to-[#26143e]-600 rounded-2xl p-6 shadow-2xl">
               <div className="text-sm font-medium opacity-80 mb-2">Rep Count</div>
               <div className="text-6xl font-bold">{repCount}</div>
               <div className="mt-2 text-sm opacity-80">{currentExercise || 'Select exercise'}</div>
