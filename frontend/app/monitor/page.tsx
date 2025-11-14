@@ -9,6 +9,7 @@ import {
 } from "@mediapipe/tasks-vision";
 import toast, { Toaster } from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface Exercise {
   name: string;
@@ -34,6 +35,7 @@ export default function ExerciseTracker() {
   const [accidentCountdown, setAccidentCountdown] = useState(0);
   const searchParams = useSearchParams();
   const exerciseParam = searchParams.get("exercise");
+  const router = useRouter();
 
   useEffect(() => {
     if (exerciseParam) {
@@ -1240,8 +1242,9 @@ export default function ExerciseTracker() {
       }
 
       showToastWithCooldown("info", "📹 Webcam stopped", "accident", 2000);
+      router.push('/finish')
       return;
-    }
+    } 
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({

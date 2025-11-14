@@ -32,7 +32,21 @@ export default function ExerciseCompleteScreen({ exercise = "Exercise" }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 flex items-center justify-center p-6">
+    // <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 flex items-center justify-center p-6">
+     <div
+      className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat p-4"
+      style={{
+        backgroundImage: `
+    linear-gradient(to bottom right, #241c41, rgba(244,246,255,0.85), #241c41),
+
+
+            url('/ac.jpg')
+
+    `,
+        backgroundAttachment: "fixed",
+      }}
+    >
+
       <div className="max-w-xl w-full bg-white/80 backdrop-blur-lg border border-white/40 shadow-2xl rounded-3xl p-10 text-center relative">
         {/* Success Icon */}
         <div className="flex justify-center mb-6">
@@ -53,7 +67,7 @@ export default function ExerciseCompleteScreen({ exercise = "Exercise" }) {
         </p>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-3 gap-4 mb-10">
+        {/* <div className="grid grid-cols-3 gap-4 mb-10">
           <div className="bg-blue-50 rounded-xl p-4 shadow text-center">
             <h2 className="text-xl font-bold text-blue-700">5</h2>
             <p className="text-sm text-gray-700">Sets</p>
@@ -68,7 +82,7 @@ export default function ExerciseCompleteScreen({ exercise = "Exercise" }) {
             <h2 className="text-xl font-bold text-purple-700">💪</h2>
             <p className="text-sm text-gray-700">Perfect Form</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

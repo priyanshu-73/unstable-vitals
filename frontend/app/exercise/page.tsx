@@ -14,7 +14,7 @@ export default function ExerciseSelectScreen() {
       label: "Shoulder Press",
       icon: Dumbbell,
       category: "Shoulders",
-      youtubeId: "2yjwXTZQDDI",
+      youtubeId: "hOTABpGvhBc",
     },
     {
       id: "Squats",
@@ -28,7 +28,7 @@ export default function ExerciseSelectScreen() {
       label: "Bicep Curls",
       icon: ArrowLeftRight,
       category: "Bicep Curls",
-      youtubeId: "ykJmrZ5v0Oo",
+      youtubeId: "6DeLZ6cbgWQ",
     },
   ];
 
