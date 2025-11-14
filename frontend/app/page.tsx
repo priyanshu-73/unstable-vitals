@@ -13,7 +13,7 @@ export default function LandingPage() {
   className="min-h-screen bg-cover bg-center bg-no-repeat p-8 flex flex-col" 
   style={{
     backgroundImage: `
-    linear-gradient(to bottom right, rgba(238, 243, 255, 0.42), rgba(244,246,255,0.85), rgba(1, 7, 20, 0.85)),
+    linear-gradient(to bottom right, #241c41, rgba(244,246,255,0.85), #241c41),
 
             url('/ac.jpg')
 
@@ -25,16 +25,16 @@ export default function LandingPage() {
       <div className="w-full py-6 px-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="bg-blue-600/10 p-3 rounded-xl">
-            <Dumbbell className="h-8 w-8 text-blue-600" />
+            <Dumbbell className="h-8 w-8 text-[#26143e]" />
           </div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent tracking-tight">
+          <h1 className="text-2xl font-bold  text-[#26143e]-500 bg-clip-text ">
             Unstable Vitals FitTrack
           </h1>
         </div>
 
         <button
           onClick={() => router.push("/auth")}
-          className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
+          className="bg-[#26143e] text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
         >
           Login
         </button>
@@ -44,7 +44,7 @@ export default function LandingPage() {
       <div className="flex-1 flex flex-col-reverse lg:flex-row items-center justify-center px-8 lg:px-24 py-10 gap-16">
         {/* LEFT SECTION */}
         <div className="text-center lg:text-left max-w-xl">
-          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl text-[#26143e] font-extrabold   bg-clip-text   leading-tight">
             Real-Time Exercise Tracking.
           </h2>
 
@@ -59,7 +59,7 @@ export default function LandingPage() {
 
           <button
             onClick={() => router.push("/auth")}
-            className="mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition flex items-center gap-2 mx-auto lg:mx-0"
+            className="mt-8 bg-[#26143e] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition flex items-center gap-2 mx-auto lg:mx-0"
           >
             Start Training
             <ArrowRight className="h-5 w-5" />
@@ -69,7 +69,7 @@ export default function LandingPage() {
         {/* RIGHT ILLUSTRATION */}
         <div className="w-full max-w-lg flex justify-center">
           <div className="bg-white/60 backdrop-blur-xl border border-white/40 p-8 rounded-3xl shadow-2xl">
-            <Activity className="w-40 h-40 text-blue-600 mx-auto" />
+            <Activity className="w-40 h-40 text-[#26143e] mx-auto" />
           </div>
         </div>
       </div>
