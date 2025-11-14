@@ -220,7 +220,7 @@ export default function ExerciseSelectScreen() {
             <h2
               className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-#241c41 tracking-tight"
             >
-              Unstable Vitals - Exercises Real-Time tracking
+              UNstable Vitals - Exercises Real-Time tracking
             </h2>
 
             <div className="relative flex items-center justify-center">

@@ -88,7 +88,7 @@ export default function AuthPage() {
             </div>
 
             <h1 className="mt-4 text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-[#26143e]">
-              Unstable Vitals
+              UNstable Vitals
             </h1>
             <p className="text-gray-600 mt-2">
               {mode === "login"

@@ -100,7 +100,7 @@ export default function ExerciseTracker() {
   const GRACE_PERIOD = 10000;
   const ALERT_COOLDOWN = 3000;
   const FRAMES_BEFORE_ALERT = 10;
-  const MIN_REP_DURATION = 2000;
+  const MIN_REP_DURATION = 500;
   const EMOTION_TOAST_COOLDOWN = 15000;
   const FALL_CHECK_INTERVAL = 100;
   const FALL_ANGLE_THRESHOLD = 45;
@@ -108,8 +108,8 @@ export default function ExerciseTracker() {
 
   // ✨ NEW: Rep validation constants
   const REP_STATE_HISTORY_SIZE = 3;
-  const MIN_PHASE_DURATION = 500; // Must hold each phase for 500ms
-  const REP_COOLDOWN = 800; // Minimum time between counted reps
+  const MIN_PHASE_DURATION = 100; // Must hold each phase for 500ms
+  const REP_COOLDOWN = 100; // Minimum time between counted reps
   const ANGLE_THRESHOLD_BUFFER = 5;
 
   // Accident detection constants
@@ -547,17 +547,17 @@ export default function ExerciseTracker() {
     let message = "";
     switch (type) {
       case "PERSON_DISAPPEARED":
-        callEmergency()
+        callEmergency();
         message = "🚨 EMERGENCY: Person missing for 20+ seconds!";
         setFormFeedback("🚨 PERSON DISAPPEARED! Guardian alerted!");
         break;
       case "NOT_MOVING":
-        callEmergency()
+        callEmergency();
         message = "🚨 EMERGENCY: No movement for 20+ seconds!";
         setFormFeedback("🚨 NOT MOVING! Guardian alerted!");
         break;
       case "FALL_CONFIRMED":
-        callEmergency()
+        callEmergency();
         message = "🚨 EMERGENCY: Fall confirmed!";
         setFormFeedback("🚨 FALL DETECTED! Guardian alerted!");
         break;
@@ -653,7 +653,6 @@ export default function ExerciseTracker() {
 
       if (consecutiveFramesWithErrorRef.current >= FRAMES_BEFORE_ALERT) {
         if (currentTime - lastAlertTimeRef.current > ALERT_COOLDOWN) {
-          setFormFeedback("⚠️ Elbows flaring! Keep them closer!");
           showToastWithCooldown(
             "error",
             "⚠️ Elbows too wide! Risk of injury",
@@ -1242,9 +1241,9 @@ export default function ExerciseTracker() {
       }
 
       showToastWithCooldown("info", "📹 Webcam stopped", "accident", 2000);
-      router.push('/finish')
+      router.push("/finish");
       return;
-    } 
+    }
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({

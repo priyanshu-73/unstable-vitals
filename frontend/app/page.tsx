@@ -1,17 +1,17 @@
 "use client";
 
-import React, { use, useEffect } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Dumbbell, Activity, ArrowRight } from "lucide-react";
 
 export default function LandingPage() {
   const router = useRouter();
-  let userId: string | null = null;
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
-    userId = localStorage.getItem("userId");
-    console.log({});
-  }, []);
+    const id = localStorage.getItem("userId");
+    setUserId(id);
+  }, [userId]);
 
   return (
     // <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] flex flex-col">
@@ -33,21 +33,12 @@ export default function LandingPage() {
           <div className="bg-blue-600/10 p-3 rounded-xl">
             <Dumbbell className="h-8 w-8 text-[#26143e]" />
           </div>
-          <h1
-            className="text-2xl font-bold  text-[#26143e]-500 bg-clip-text "
-          >
-            Unstable Vitals
+          <h1 className="text-2xl font-bold  text-[#26143e]-500 bg-clip-text ">
+            UNstable Vitals
           </h1>
         </div>
 
-        {userId ? (
-          <button
-            onClick={() => router.push("/auth")}
-            className="bg-[#26143e] from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
-          >
-            Login
-          </button>
-        ) : (
+        {userId != null ? (
           <button
             onClick={() => {
               localStorage.clear();
@@ -56,6 +47,15 @@ export default function LandingPage() {
             className="bg-[#26143e] from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
           >
             Logout
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              router.push("/auth");
+            }}
+            className="bg-[#26143e] from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
+          >
+            Login
           </button>
         )}
       </div>
@@ -98,7 +98,7 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="text-center text-gray-500 py-6">
-        © {new Date().getFullYear()} Unstable Vitals. All rights reserved.
+        © {new Date().getFullYear()} UNstable Vitals. All rights reserved.
       </footer>
     </div>
   );
