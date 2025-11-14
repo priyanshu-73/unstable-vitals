@@ -55,7 +55,8 @@ export default function AuthPage() {
 
   return (
            <div
-  className="min-h-screen bg-cover bg-center bg-no-repeat p-8 flex flex-col" 
+        className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat"
+
   style={{
     backgroundImage: `
     linear-gradient(to bottom right, rgba(238, 243, 255, 0.42), rgba(244,246,255,0.85), rgba(1, 7, 20, 0.85)),
