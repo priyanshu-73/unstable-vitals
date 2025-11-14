@@ -1,11 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { use, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Dumbbell, Activity, ArrowRight } from "lucide-react";
 
 export default function LandingPage() {
   const router = useRouter();
+  let userId: string | null = null;
+
+  useEffect(() => {
+    userId = localStorage.getItem("userId");
+    console.log({});
+  }, []);
 
   return (
     // <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] flex flex-col">
@@ -35,12 +41,24 @@ export default function LandingPage() {
           </h1>
         </div>
 
-        <button
-          onClick={() => router.push("/auth")}
-          className="bg-[#26143e] text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
-        >
-          Login
-        </button>
+        {userId ? (
+          <button
+            onClick={() => router.push("/auth")}
+            className="bg-[#26143e] from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
+          >
+            Login
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              localStorage.clear();
+              router.push("/auth");
+            }}
+            className="bg-[#26143e] from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-semibold shadow hover:shadow-lg transition"
+          >
+            Logout
+          </button>
+        )}
       </div>
 
       {/* HERO SECTION */}
@@ -61,8 +79,10 @@ export default function LandingPage() {
           </p>
 
           <button
-            onClick={() => router.push("/auth")}
-            className="mt-8 bg-[#26143e] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition flex items-center gap-2 mx-auto lg:mx-0"
+            onClick={() => {
+              userId ? router.push("/excercise") : router.push("/auth");
+            }}
+            className="mt-8 bg-[#26143e] from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition flex items-center gap-2 mx-auto lg:mx-0"
           >
             Start Training
             <ArrowRight className="h-5 w-5" />

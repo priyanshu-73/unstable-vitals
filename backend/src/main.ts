@@ -14,6 +14,13 @@ async function bootstrap() {
   );
   app.useGlobalPipes(new ValidationPipe());
 
+  app.enableCors({
+    origin: true,
+    credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+  });
+
   const config = new DocumentBuilder()
     .setTitle('MedTech Hackathon API')
     .setDescription(
