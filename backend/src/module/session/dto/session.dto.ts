@@ -8,7 +8,7 @@ export class CreateSessionDto {
   })
   @IsString()
   @IsOptional()
-  sessionId?: string;
+  userId?: string;
 
   @ApiProperty({
     description: 'Name of exercise performed in this session',
@@ -16,26 +16,4 @@ export class CreateSessionDto {
   })
   @IsString()
   exerciseName: string;
-
-  @ApiProperty({
-    description: 'Session start time as ISO string',
-    example: '2025-11-14T10:00:00Z',
-  })
-  @IsString()
-  startTime: string;
-
-  @ApiProperty({
-    description: 'Session end time as ISO string',
-    example: '2025-11-14T10:15:00Z',
-  })
-  @IsString()
-  endTime: string;
-
-  @ApiPropertyOptional({
-    description: 'Emergency status for the session',
-    example: false,
-    default: false,
-  })
-  @IsOptional()
-  emergency?: boolean;
 }

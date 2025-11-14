@@ -1,16 +1,14 @@
-export class Session {
-  sessionId: string;
-  exerciseName: string;
-  startTime: string;
-  endTime: string;
-  emergency: boolean = false;
-}
+import { model, Document, Types } from 'mongoose';
+import { UserSchema } from '../schema/user.schema';
+import { Session } from 'src/module/session/model/session.model';
 
-export class User {
+export interface User extends Document {
   userId: string;
   name: string;
   email: string;
   password: string;
   guardianEmail: string;
-  sessions: Session[] = [];
+  sessions: Types.ObjectId[] | Session[];
 }
+
+export const UserModel = model<User>('User', UserSchema);
