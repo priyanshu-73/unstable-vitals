@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Unstable Vitals FitTrack  
+# 🏋️‍♂️ UNstable Vitals FitTrack  
 ### Real-Time AI Exercise Monitoring & Posture Tracking
 
 Unstable Vitals   is a modern fitness application designed to help users track exercise form in real time using their webcam. It provides instant posture feedback, exercise recommendations, and learning resources — all inside a beautifully designed, responsive UI.

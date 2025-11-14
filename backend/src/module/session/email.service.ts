@@ -25,7 +25,7 @@ export class EmailService {
       },
       from:
         this.configService.get<string>('EMAIL_FROM') ||
-        'Unstable Vitals <noreply@healthjini.com>',
+        'UNstable Vitals <noreply@healthjini.com>',
     });
   }
   /**
@@ -87,7 +87,7 @@ export class EmailService {
         Please check in immediately to ensure their safety.<br>
         This automated alert was triggered due to abnormal inactivity or fall detection.
       </p>
-      <p>Best regards,<br><strong>Unstable Vitals Team</strong></p>
+      <p>Best regards,<br><strong>UNstable Vitals Team</strong></p>
       <div class="footer">
         <p>This is an automated message. Please do not reply.</p>
       </div>
