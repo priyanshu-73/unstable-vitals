@@ -219,7 +219,6 @@ export default function ExerciseSelectScreen() {
           <div className="flex items-center justify-between mb-8">
             <h2
               className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-#241c41 tracking-tight"
-              style={{ textShadow: "0 1px 4px rgba(255, 255, 255, 0.53)" }}
             >
               Unstable Vitals - Exercises Real-Time tracking
             </h2>

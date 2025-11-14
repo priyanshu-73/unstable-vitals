@@ -35,7 +35,6 @@ export default function LandingPage() {
           </div>
           <h1
             className="text-2xl font-bold  text-[#26143e]-500 bg-clip-text "
-            style={{ textShadow: "0 0px 3px rgba(197, 196, 196, 0.53)" }}
           >
             Unstable Vitals
           </h1>
