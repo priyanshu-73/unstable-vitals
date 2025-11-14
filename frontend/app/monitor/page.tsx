@@ -85,7 +85,7 @@ export default function ExerciseTracker() {
 
   const ANGLE_HISTORY_SIZE = 5;
   const ANGLE_CHANGE_THRESHOLD = 3;
-  const GRACE_PERIOD = 20000;
+  const GRACE_PERIOD = 10000;
   const ALERT_COOLDOWN = 3000;
   const FRAMES_BEFORE_ALERT = 10;
   const MIN_REP_DURATION = 2000;
@@ -849,11 +849,11 @@ export default function ExerciseTracker() {
           const drawingUtils = new DrawingUtils(canvasCtx);
          
           for (const landmark of poseResult.landmarks) {
-            drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS, { color: '#00FF00', lineWidth: 4 });
+            drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS, { color: 'white', lineWidth: 3 });
             drawingUtils.drawLandmarks(landmark, {
-              color: '#FF0000',
-              fillColor: '#FF0000',
-              radius: (data: any) => DrawingUtils.lerp(data.from!.z!, -0.15, 0.1, 8, 1)
+              color: 'black',
+              fillColor: 'black',
+              radius: 2
             });
           }
 
