@@ -197,35 +197,32 @@ export default function ExerciseSelectScreen() {
 
   return (
     // <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] p-4">
-   
-   <div
-        className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat p-4"
 
-  style={{
-    backgroundImage: `
+    <div
+      className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat p-4"
+      style={{
+        backgroundImage: `
     linear-gradient(to bottom right, #241c41, rgba(244,246,255,0.85), #241c41),
 
 
             url('/ac.jpg')
 
     `,
-    backgroundAttachment: "fixed",
-  }}
-> 
-
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* MAIN CONTAINER */}
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
         {/* RIGHT SECTION */}
         <div className="flex-1">
           {/* HEADER CONTROLS */}
           <div className="flex items-center justify-between mb-8">
-           <h2
-  className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-#241c41 tracking-tight"
-  style={{ textShadow: "0 1px 4px rgba(255, 255, 255, 0.53)" }}
->
-  Unstable Vitals - Exercises Real-Time tracking
-</h2>
-
+            <h2
+              className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-#241c41 tracking-tight"
+              style={{ textShadow: "0 1px 4px rgba(255, 255, 255, 0.53)" }}
+            >
+              Unstable Vitals - Exercises Real-Time tracking
+            </h2>
 
             <div className="relative flex items-center justify-center">
               <input
@@ -239,7 +236,7 @@ export default function ExerciseSelectScreen() {
             </div>
           </div>
           {/* CTA */}
-           
+
           {/* GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7  ">
             {exerciseOptions
@@ -324,61 +321,6 @@ export default function ExerciseSelectScreen() {
               </div>
             ))}
           </div>
-
-          {/* CTA */}
-          {/* <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl p-10 text-center shadow-lg">
-            <h3 className="text-3xl font-bold mb-3">Ready to Start Training?</h3>
-            <p className="text-lg opacity-90 mb-6">Select any exercise and begin real-time tracking.</p>
-            <button
-              onClick={() => router.push("/")}
-              className="bg-white text-blue-700 px-7 py-3 rounded-xl font-semibold shadow hover:shadow-lg transition"
-            >
-              Start Now
-            </button>
-          </div> */}
-          {/* FULL FOOTER */}
-          {/* <footer className="mt-20 bg-gray-900 text-gray-200 rounded-t-3xl pt-16 pb-10 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-white">
-                  Unstable Vitals FitTrack
-                </h3>
-                <p className="opacity-70">
-                  Real-time exercise monitoring using motion tracking. Improve
-                  your form, avoid injuries.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-white">
-                  Quick Links
-                </h3>
-                <ul className="space-y-2 opacity-80">
-                  <li>Exercises</li>
-                  <li>Categories</li>
-                  <li>About</li>
-                  <li>Support</li>
-                </ul>
-              </div>
-
-              <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold mb-3 text-white">
-                  Start Training
-                </h3>
-                <button
-                  onClick={() => router.push("/")}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700 transition"
-                >
-                  Begin Workout
-                </button>
-              </div>
-            </div>
-
-            <p className="text-center text-sm mt-14 opacity-50">
-              © {new Date().getFullYear()} Unstable Vitals FitTrack. All rights
-              reserved.
-            </p>
-          </footer> */}
         </div>
       </div>
     </div>

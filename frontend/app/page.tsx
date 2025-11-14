@@ -9,26 +9,29 @@ export default function LandingPage() {
 
   return (
     // <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] flex flex-col">
-       <div
-  className="min-h-screen bg-cover bg-center bg-no-repeat p-8 flex flex-col" 
-  style={{
-    backgroundImage: `
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat p-8 flex flex-col"
+      style={{
+        backgroundImage: `
     linear-gradient(to bottom right, #241c41, rgba(244,246,255,0.85), #241c41),
 
             url('/ac.jpg')
 
     `,
-    backgroundAttachment: "fixed",
-  }}
->
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* NAVBAR */}
       <div className="w-full py-6 px-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="bg-blue-600/10 p-3 rounded-xl">
             <Dumbbell className="h-8 w-8 text-[#26143e]" />
           </div>
-          <h1 className="text-2xl font-bold  text-[#26143e]-500 bg-clip-text ">
-            Unstable Vitals FitTrack
+          <h1
+            className="text-2xl font-bold  text-[#26143e]-500 bg-clip-text "
+            style={{ textShadow: "0 0px 3px rgba(197, 196, 196, 0.53)" }}
+          >
+            Unstable Vitals
           </h1>
         </div>
 
@@ -76,8 +79,7 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="text-center text-gray-500 py-6">
-        © {new Date().getFullYear()} Unstable Vitals FitTrack. All rights
-        reserved.
+        © {new Date().getFullYear()} Unstable Vitals. All rights reserved.
       </footer>
     </div>
   );

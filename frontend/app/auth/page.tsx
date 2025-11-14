@@ -54,20 +54,19 @@ export default function AuthPage() {
   };
 
   return (
-           <div
-        className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat"
-
-  style={{
-    backgroundImage: `
+    <div
+      className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `
     linear-gradient(to bottom right, #241c41, rgba(244,246,255,0.85), #241c41),
 
 
             url('/ac.jpg')
 
     `,
-    backgroundAttachment: "fixed",
-  }}
->
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div className="w-full min-h-screen flex items-center justify-center   p-6">
         <div className="w-full max-w-[30rem]   backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-10 relative overflow-hidden">
           {/* LOGO */}
@@ -77,7 +76,7 @@ export default function AuthPage() {
             </div>
 
             <h1 className="mt-4 text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-[#26143e]">
-              Unstable Vitals FitTrack
+              Unstable Vitals
             </h1>
 
             <p className="text-gray-600 mt-2">
