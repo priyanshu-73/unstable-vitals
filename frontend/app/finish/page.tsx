@@ -73,7 +73,7 @@ export default function ExerciseCompleteScreen({ exercise = "Exercise" }) {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
-            onClick={() => router.push("/excercise")}
+            onClick={() => router.push("/exercise")}
             className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700 transition"
           >
             <RefreshCcw size={20} />

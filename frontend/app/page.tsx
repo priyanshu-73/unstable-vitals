@@ -79,7 +79,7 @@ export default function LandingPage() {
 
           <button
             onClick={() => {
-              userId ? router.push("/excercise") : router.push("/auth");
+              userId ? router.push("/exercise") : router.push("/auth");
             }}
             className="mt-8 bg-[#26143e] from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition flex items-center gap-2 mx-auto lg:mx-0"
           >
