@@ -1,3 +1,32 @@
 @import "tailwindcss";
 
- 
+   @keyframes pulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          @keyframes shake {
+            0%,
+            100% {
+              transform: translateX(-50%) rotate(0deg);
+            }
+            25% {
+              transform: translateX(-50%) rotate(-5deg);
+            }
+            75% {
+              transform: translateX(-50%) rotate(5deg);
+            }
+          }
+          .text-2xl.alert {
+            color: #ff6b6b;
+            animation: pulse 1s infinite;
+          }
+          .animate-shake {
+            animation: shake 0.5s infinite;
+          }

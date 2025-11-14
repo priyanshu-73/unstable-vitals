@@ -8,7 +8,19 @@ export default function LandingPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] flex flex-col">
+    // <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] flex flex-col">
+       <div
+  className="min-h-screen bg-cover bg-center bg-no-repeat p-8 flex flex-col" 
+  style={{
+    backgroundImage: `
+    linear-gradient(to bottom right, rgba(238, 243, 255, 0.42), rgba(244,246,255,0.85), rgba(1, 7, 20, 0.85)),
+
+            url('/ac.jpg')
+
+    `,
+    backgroundAttachment: "fixed",
+  }}
+>
       {/* NAVBAR */}
       <div className="w-full py-6 px-8 flex items-center justify-between">
         <div className="flex items-center gap-3">

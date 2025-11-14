@@ -197,6 +197,9 @@ export default function ExerciseSelectScreen() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#EEF3FF] via-[#F4F6FF] to-[#EAF0FF] p-4">
+   
+
+
       {/* MAIN CONTAINER */}
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
         {/* RIGHT SECTION */}
@@ -219,22 +222,9 @@ export default function ExerciseSelectScreen() {
             </div>
           </div>
           {/* CTA */}
-          <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl p-10 text-center shadow-lg">
-            <h3 className="text-3xl font-bold mb-3">
-              Ready to Start Training?
-            </h3>
-            <p className="text-lg opacity-90 mb-6">
-              Select any exercise and begin real-time tracking.
-            </p>
-            {/* <button
-              onClick={() => router.push("/")}
-              className="bg-white text-blue-700 px-7 py-3 rounded-xl font-semibold shadow hover:shadow-lg transition"
-            >
-              Start Now
-            </button> */}
-          </div>
+           
           {/* GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 shadow-lg">
             {exerciseOptions
               .filter((e) =>
                 e.label.toLowerCase().includes(search.toLowerCase())
@@ -269,7 +259,7 @@ export default function ExerciseSelectScreen() {
 
         {/* POPULAR CATEGORIES */}
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4 ">
             Popular Categories
           </h3>
 

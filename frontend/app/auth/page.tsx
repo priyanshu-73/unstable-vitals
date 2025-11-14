@@ -54,14 +54,20 @@ export default function AuthPage() {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center  bg-cover bg-center bg-no-repeat"
-      //   style={{
-      //     backgroundImage: "url('/authbg.jpg')",
-      //   }}
-    >
+           <div
+  className="min-h-screen bg-cover bg-center bg-no-repeat p-8 flex flex-col" 
+  style={{
+    backgroundImage: `
+    linear-gradient(to bottom right, rgba(238, 243, 255, 0.42), rgba(244,246,255,0.85), rgba(1, 7, 20, 0.85)),
+
+            url('/ac.jpg')
+
+    `,
+    backgroundAttachment: "fixed",
+  }}
+>
       <div className="w-full min-h-screen flex items-center justify-center   p-6">
-        <div className="w-full max-w-md bg-white/70 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-10 relative overflow-hidden">
+        <div className="w-full max-w-[30rem]   backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-10 relative overflow-hidden">
           {/* LOGO */}
           <div className="flex flex-col items-center mb-8">
             <div className="bg-blue-600/10 p-4 rounded-full">
