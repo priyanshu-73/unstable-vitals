@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - '2728:2728'
+    env_file:
+      - .env
+    networks:
+      - backend_network
+
+
+networks:
+  backend_network:
+       name: centralized_backend_backend_network
+       driver: bridge
