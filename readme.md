@@ -58,32 +58,12 @@ The project is built with **Next.js 14**, **TypeScript**, **TailwindCSS**, and r
 
 ---
 
-## 📁 Folder Structure
-
-app/
- ├── auth/
- │    └── page.tsx          (Login + Signup)
- ├── exercise/
- │    └── page.tsx          (Exercise selection page)
- ├── finish/
- │    └── page.tsx          (Exercise completion page)
- ├── monitor/
- │    └── page.tsx          (Webcam real-time tracking)
- ├── globals.css
- ├── layout.tsx
- └── page.tsx
-
-
-
-
----
-
 ## ⚙️ Installation
 
 ### 1️⃣ Clone the repository
 ```sh
 git clone https://github.com/priyanshu-73/unstable-vitals.git
-cd fittrack
+cd unstable-vitals
 npm install
 npm run dev
 http://localhost:3000
